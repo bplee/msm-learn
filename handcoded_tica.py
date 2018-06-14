@@ -14,17 +14,10 @@ from pyemma.coordinates import featurizer
 # X = featurizer(traj.topology)
 
 X = np.random.random([300,100])
-
+t = 20
 # u = np.dot(np.mean(X.T, axis = 1).T, np.ones(np.shape(X)))
 
 u = X.mean(axis=0)
- 
-print (u.shape)
-
-print (u)
-
-t = 20
-
 
 # Alternatively calculating all the mean data first
 meanless_x = X - u
@@ -48,6 +41,4 @@ def projection(dim = 2):
 		X_new[i] = np.dot(basis, X[i]).T
 	return X_new
 
-# print (projection())
-
-#THIS IS AN EDIT SO THAT I CAN PRACTICE COMMITTING CHANGES AND PULLING THEM ON GITHUB
+print (projection())
